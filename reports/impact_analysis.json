@@ -1,0 +1,54 @@
+{
+    "source_dataset": "synthetic_loan_applications",
+    "affected_datasets": [
+        "processed_loan_applications",
+        "loan_approval_model",
+        "loan_predictions",
+        "approval_dashboard"
+    ],
+    "affected_models": [
+        "loan_approval_model"
+    ],
+    "affected_dashboards": [
+        "approval_dashboard"
+    ],
+    "affected_jobs": [
+        {
+            "name": "loan_fairness_dashboard",
+            "inputs": [
+                "loan_predictions"
+            ],
+            "outputs": [
+                "approval_dashboard"
+            ]
+        },
+        {
+            "name": "loan_prediction_generation",
+            "inputs": [
+                "loan_approval_model",
+                "processed_loan_applications"
+            ],
+            "outputs": [
+                "loan_predictions"
+            ]
+        },
+        {
+            "name": "loan_model_training",
+            "inputs": [
+                "processed_loan_applications"
+            ],
+            "outputs": [
+                "loan_approval_model"
+            ]
+        },
+        {
+            "name": "loan_data_validation",
+            "inputs": [
+                "synthetic_loan_applications"
+            ],
+            "outputs": [
+                "processed_loan_applications"
+            ]
+        }
+    ]
+}

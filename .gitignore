@@ -1,0 +1,57 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Spark generated output
+data/approval_dashboard/
+data/loan_model/
+data/loan_model_metadata/
+data/processed_loan_applications/
+data/loan_predictions/
+
+# Spark and Hadoop temporary files
+*.crc
+_SUCCESS
+._SUCCESS.crc
+part-*
+.metadata/
+
+# Generated model artifacts
+*.pkl
+*.joblib
+
+# Logs
+*.log
+logs/
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
