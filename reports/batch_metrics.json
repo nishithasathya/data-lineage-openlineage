@@ -1,0 +1,35 @@
+{
+  "pipeline": "loan-batch-lineage-pipeline",
+  "timestamp_utc": "2026-11-03T15:40:46.247702+00:00",
+  "input_rows": 5000,
+  "valid_rows": 5000,
+  "rejected_rows": 0,
+  "training_rows": 4042,
+  "test_rows": 958,
+  "test_accuracy": 0.8977035490605428,
+  "actual_approval_rate_gap": 0.07792117195674919,
+  "predicted_approval_rate_gap": 0.012896756191140613,
+  "demographic_parity_ratio": 0.9811168990347785,
+  "fairness_by_group": [
+    {
+      "synthetic_group": "A",
+      "applications": 470,
+      "actual_approval_rate": 0.6680851063829787,
+      "predicted_approval_rate": 0.6829787234042554,
+      "true_positive_rate": 0.6382978723404256
+    },
+    {
+      "synthetic_group": "B",
+      "applications": 488,
+      "actual_approval_rate": 0.5901639344262295,
+      "predicted_approval_rate": 0.6700819672131147,
+      "true_positive_rate": 0.5655737704918032
+    }
+  ],
+  "artifacts": {
+    "processed_data": "/opt/project/data/processed_loan_applications",
+    "model": "/opt/project/data/loan_model",
+    "predictions": "/opt/project/data/loan_predictions",
+    "fairness_dashboard_data": "/opt/project/data/approval_dashboard"
+  }
+}
