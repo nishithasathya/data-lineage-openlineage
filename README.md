@@ -26,32 +26,31 @@ The project consists of two processing pipelines that share the same lineage bac
 
 Architecture Diagram
 
-flowchart TB
-    subgraph Batch["Batch Processing — Apache Spark"]
-        A["Synthetic Loan Dataset"] --> B["Data Validation"]
-        B --> C["Processed Dataset"]
-        C --> D["Model Training"]
-        D --> E["Loan Approval Model"]
-        E --> F["Prediction Generation"]
-        C --> F
-        F --> G["Fairness Dashboard"]
-    end
-    subgraph Streaming["Streaming Processing — Kafka and Flink"]
-        H["Synthetic Event Producer"] --> I["Kafka Topic"]
-        I --> J["Flink Streaming Job"]
-        J --> K["Event Validation"]
-        K --> L["Windowed Fairness Metrics"]
-    end
-    subgraph Lineage["Lineage and Impact Analysis"]
-        M["OpenLineage Events"] --> N["Marquez Backend"]
-        N --> O["Lineage Graph"]
-        N --> P["Downstream Impact Analysis"]
-    end
-    B -.-> M
-    D -.-> M
-    F -.-> M
-    G -.-> M
-    J -.-> M
+                    SYNTHETIC LOAN DATA
+                            |
+                 +----------+----------+
+                 |                     |
+            BATCH PIPELINE       STREAMING PIPELINE
+                 |                     |
+              APACHE SPARK       APACHE KAFKA
+                 |                     |
+          Data Validation          APACHE FLINK
+                 |                     |
+          Model Training        Fairness Metrics
+                 |                     |
+            Predictions       Streaming Fairness
+                 |                     |
+          Fairness Dashboard          |
+                 |                     |
+                 +----------+----------+
+                            |
+                       OPENLINEAGE
+                            |
+                         MARQUEZ
+                            |
+                    LINEAGE TRACKING
+                            |
+                    IMPACT ANALYSIS
 
 Technology Stack
 
