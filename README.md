@@ -1,4 +1,4 @@
-##Data Lineage and Responsible AI Using OpenLineage##
+## Data Lineage and Responsible AI Using OpenLineage
 
 An end-to-end data lineage and responsible AI monitoring system integrating Apache Spark, Apache Kafka, Apache Flink, OpenLineage and Marquez.
 
