@@ -4,7 +4,7 @@
 import os
 import sys
 
-sys.path.insert(0, "/opt/flink/lineage")
+sys.path.insert(0, "/opt/project/lineage")
 
 from lineage_client import build_event, send_event
 
