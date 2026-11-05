@@ -36,7 +36,7 @@ def test_lineage_client_exists():
 
 def test_streaming_pipeline_files_exist():
     read_project_file("kafka/produce_events.py")
-    read_project_file("flink/streaming_pipeline.py")
+    read_project_file("flink/streaming_job.py")
 
 
 def test_impact_analysis_exists():
